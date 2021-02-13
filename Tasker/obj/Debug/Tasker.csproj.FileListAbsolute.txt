@@ -10,3 +10,15 @@ C:\Users\Korisnik\source\repos\Tasker\Tasker\obj\Debug\Tasker.csproj.GenerateRes
 C:\Users\Korisnik\source\repos\Tasker\Tasker\obj\Debug\Tasker.csproj.CoreCompileInputs.cache
 C:\Users\Korisnik\source\repos\Tasker\Tasker\obj\Debug\Tasker.exe
 C:\Users\Korisnik\source\repos\Tasker\Tasker\obj\Debug\Tasker.pdb
+C:\Users\Igor\Desktop\MyTasker-master\Tasker\bin\Debug\tasks.mdf
+C:\Users\Igor\Desktop\MyTasker-master\Tasker\bin\Debug\tasks_log.ldf
+C:\Users\Igor\Desktop\MyTasker-master\Tasker\bin\Debug\Tasker.exe.config
+C:\Users\Igor\Desktop\MyTasker-master\Tasker\bin\Debug\Tasker.exe
+C:\Users\Igor\Desktop\MyTasker-master\Tasker\bin\Debug\Tasker.pdb
+C:\Users\Igor\Desktop\MyTasker-master\Tasker\obj\Debug\Tasker.csprojAssemblyReference.cache
+C:\Users\Igor\Desktop\MyTasker-master\Tasker\obj\Debug\Tasker.Properties.Resources.resources
+C:\Users\Igor\Desktop\MyTasker-master\Tasker\obj\Debug\Tasker.csproj.GenerateResource.cache
+C:\Users\Igor\Desktop\MyTasker-master\Tasker\obj\Debug\Tasker.csproj.CoreCompileInputs.cache
+C:\Users\Igor\Desktop\MyTasker-master\Tasker\obj\Debug\Tasker.exe
+C:\Users\Igor\Desktop\MyTasker-master\Tasker\obj\Debug\Tasker.pdb
+C:\Users\Igor\Desktop\MyTasker-master\Tasker\obj\Debug\Tasker.frmGlavna.resources

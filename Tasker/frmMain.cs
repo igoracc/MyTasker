@@ -11,11 +11,11 @@ namespace Tasker
 {
 
 
-    public partial class frmMain : Form
+    public partial class frmGlavna : Form
     {
         clZadatak zadatak = new clZadatak();
 
-        public frmMain()
+        public frmGlavna()
         {
             InitializeComponent();
         }

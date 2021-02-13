@@ -77,13 +77,57 @@ namespace Tasker
 
         }
 
-        //public static DataRow GetDataRow ( string cSql)
-        //{
+        public long addTask (string cipher, string TaskName, string hyperlink, DateTime dtPlan, decimal cost, short prioritet, int plannedHours,string description, DateTime dtRok)
+        {
+            int n = 0;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = dbCon;
 
-        //    DataRow dt = new DataRow();
-        //    return dt;
+            cmd.CommandText = @"INSERT INTO Zadatak (sifra, naziv, link, kopis, prioritet, cijena, datump, userU, PlaniranoSati, Rok ) 
 
-        //}
+                                             VALUES ( @sifra, @naziv, @link, @kopis, @prioritet,@cijena, @datump, @User, @PlaniranoSati, @Rok )
+
+            ";
+
+            cmd.Parameters.AddWithValue("@sifra", cipher);
+            cmd.Parameters.AddWithValue("@naziv", TaskName);
+            cmd.Parameters.AddWithValue("@link", hyperlink);
+            cmd.Parameters.AddWithValue("@kopis", description);
+            cmd.Parameters.AddWithValue("@prioritet", prioritet);
+            cmd.Parameters.AddWithValue("@cijena", cost);
+            cmd.Parameters.AddWithValue("@datump", dtPlan);
+            cmd.Parameters.AddWithValue("@User", "");
+            cmd.Parameters.AddWithValue("@PlaniranoSati", plannedHours);
+            cmd.Parameters.AddWithValue("@Rok", dtRok);
+
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                n = 1;
+            }
+            catch (Exception)
+            {
+                n = 0;
+                throw;
+            }
+
+            return n;
+
+        }
+
+        //sifra = @sifra,
+        //        naziv = @naziv,
+        //        link = @link,
+        //        kopis = @kopis,
+        //        prioritet = @prioritet,
+        //        cijena = @cijena,
+        //        datump = @datump,
+        //        userU = @User,
+        //        PlaniranoSati = @PlaniranoSati,
+        //        Rok = @Rok,
+        //        datumZ = @datumZ
+
 
 
 
