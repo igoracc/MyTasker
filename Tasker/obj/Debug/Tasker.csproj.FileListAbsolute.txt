@@ -1,0 +1,12 @@
+C:\Users\Korisnik\source\repos\Tasker\Tasker\bin\Debug\tasks.mdf
+C:\Users\Korisnik\source\repos\Tasker\Tasker\bin\Debug\tasks_log.ldf
+C:\Users\Korisnik\source\repos\Tasker\Tasker\bin\Debug\Tasker.exe.config
+C:\Users\Korisnik\source\repos\Tasker\Tasker\bin\Debug\Tasker.exe
+C:\Users\Korisnik\source\repos\Tasker\Tasker\bin\Debug\Tasker.pdb
+C:\Users\Korisnik\source\repos\Tasker\Tasker\obj\Debug\Tasker.csprojAssemblyReference.cache
+C:\Users\Korisnik\source\repos\Tasker\Tasker\obj\Debug\Tasker.frmMain.resources
+C:\Users\Korisnik\source\repos\Tasker\Tasker\obj\Debug\Tasker.Properties.Resources.resources
+C:\Users\Korisnik\source\repos\Tasker\Tasker\obj\Debug\Tasker.csproj.GenerateResource.cache
+C:\Users\Korisnik\source\repos\Tasker\Tasker\obj\Debug\Tasker.csproj.CoreCompileInputs.cache
+C:\Users\Korisnik\source\repos\Tasker\Tasker\obj\Debug\Tasker.exe
+C:\Users\Korisnik\source\repos\Tasker\Tasker\obj\Debug\Tasker.pdb
