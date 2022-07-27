@@ -13,6 +13,7 @@ namespace Tasker
     public partial class frmEdit : Form
     {
         clZadatak zadatak = new clZadatak();
+        public long TaskID = 0;
         public frmEdit()
         {
             InitializeComponent();
@@ -27,5 +28,14 @@ namespace Tasker
 
         }
 
+        private void frmEdit_Load(object sender, EventArgs e)
+        {
+
+
+
+
+
+
+        }
     }
 }

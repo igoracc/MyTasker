@@ -13,7 +13,10 @@ namespace Tasker
     {
 
         public static SqlConnection dbCon = new SqlConnection();
-        public static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\tasks.mdf;Integrated Security=True";
+        // public static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\tasks.mdf;Integrated Security=True";
+
+        public static string constr = @"Server=myServerAddress;Database=myDataBase;User Id = sa; Password=12!?qwQW;";
+
 
         public  void OpenConnection()
         {
@@ -83,22 +86,22 @@ namespace Tasker
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = dbCon;
 
-            cmd.CommandText = @"INSERT INTO Zadatak (sifra, naziv, link, kopis, prioritet, cijena, datump, userU, PlaniranoSati, Rok ) 
+            cmd.CommandText = @"INSERT INTO Zadatak (cipher, name, link, description, priority, price, dateCreated, userU, plannedTime, DateDue ) 
 
-                                             VALUES ( @sifra, @naziv, @link, @kopis, @prioritet,@cijena, @datump, @User, @PlaniranoSati, @Rok )
+                                             VALUES ( @cipher, @name, @link, @description, @priority,@price, @dateCreated, @User, @plannedTime, @DateDue )
 
             ";
 
-            cmd.Parameters.AddWithValue("@sifra", cipher);
-            cmd.Parameters.AddWithValue("@naziv", TaskName);
+            cmd.Parameters.AddWithValue("@cipher", cipher);
+            cmd.Parameters.AddWithValue("@name", TaskName);
             cmd.Parameters.AddWithValue("@link", hyperlink);
-            cmd.Parameters.AddWithValue("@kopis", description);
-            cmd.Parameters.AddWithValue("@prioritet", prioritet);
-            cmd.Parameters.AddWithValue("@cijena", cost);
-            cmd.Parameters.AddWithValue("@datump", dtPlan);
+            cmd.Parameters.AddWithValue("@description", description);
+            cmd.Parameters.AddWithValue("@priority", prioritet);
+            cmd.Parameters.AddWithValue("@price", cost);
+            cmd.Parameters.AddWithValue("@dateCreated", dtPlan);
             cmd.Parameters.AddWithValue("@User", "");
-            cmd.Parameters.AddWithValue("@PlaniranoSati", plannedHours);
-            cmd.Parameters.AddWithValue("@Rok", dtRok);
+            cmd.Parameters.AddWithValue("@plannedTime", plannedHours);
+            cmd.Parameters.AddWithValue("@DateDue", dtRok);
 
 
             try
@@ -115,6 +118,61 @@ namespace Tasker
             return n;
 
         }
+
+
+
+        public long addTask(long ID, string cipher, string TaskName, string hyperlink, DateTime dtPlan, decimal cost, short prioritet, int plannedHours, string description, DateTime dtRok)
+        {
+            int n = 0;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = dbCon;
+
+            cmd.CommandText = @"UPDATE Zadatak SET
+                                    name = @name,
+                                    link = @link,
+                                    description = @description,
+                                    priority = @priority,
+                                    price =@price,
+                                    dateCreated = @dateCreated,
+                                    userU = @userU,
+                                    plannedTime = @plannedTime,
+                                    DateDue = @DateDue
+
+                                    WHERE id = @ID
+
+            ";
+
+            cmd.Parameters.AddWithValue("@cipher", cipher);
+            cmd.Parameters.AddWithValue("@name", TaskName);
+            cmd.Parameters.AddWithValue("@link", hyperlink);
+            cmd.Parameters.AddWithValue("@description", description);
+            cmd.Parameters.AddWithValue("@priority", prioritet);
+            cmd.Parameters.AddWithValue("@price", cost);
+            cmd.Parameters.AddWithValue("@dateCreated", dtPlan);
+            cmd.Parameters.AddWithValue("@User", "");
+            cmd.Parameters.AddWithValue("@plannedTime", plannedHours);
+            cmd.Parameters.AddWithValue("@DateDue", dtRok);
+            cmd.Parameters.AddWithValue("@ID", ID);
+
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                n = 1;
+            }
+            catch (Exception)
+            {
+                n = 0;
+                throw;
+            }
+
+            return n;
+
+        }
+
+
+
+
 
         //sifra = @sifra,
         //        naziv = @naziv,

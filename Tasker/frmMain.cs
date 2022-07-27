@@ -14,6 +14,8 @@ namespace Tasker
     public partial class frmGlavna : Form
     {
         clZadatak zadatak = new clZadatak();
+        string sql;
+        long TaskID = 0;    
 
         public frmGlavna()
         {
@@ -24,19 +26,59 @@ namespace Tasker
         {
             zadatak.OpenConnection();
 
-            string sql;
 
-            sql = " SELECT * from zadatak";
 
-            zadatak.ExecuteNonQuerySQL("INSERT INTO zadatak (sifra) VALUES ('001') ");
 
-            //bsData.DataSource = zadatak.GetDataTableSQL(sql);
+
+
+        }
+
+
+        private void gatherData ( string search)
+        {
+            sql = " SELECT * from zadatak WHERE deleted = 0 ";
+
 
             DataTable dt = new DataTable();
             dt = zadatak.GetDataTableSQL(sql);
 
             bsData.DataSource = dt;
 
+        }
+
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (textBox1.Text != "")
+                gatherData(textBox1.Text);
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            frmEdit form = new frmEdit();
+            form.ShowDialog();
+
+           
+
+            gatherData("");
+        }
+
+
+        private void bsData_PositionChanged(object sender, EventArgs e)
+        {
+
+                  TaskID = Convert.ToInt64(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+
+            
+
+
+        }
+
+        private void mnuEdit_Click(object sender, EventArgs e)
+        {
+            frmEdit form = new frmEdit();
+            form.TaskID = TaskID;
+            form.ShowDialog();
 
         }
     }

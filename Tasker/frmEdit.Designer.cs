@@ -246,7 +246,7 @@ namespace Tasker
             this.Controls.Add(this.txtName);
             this.Name = "frmEdit";
             this.Text = "Editing task";
-            this.Load = new System.EventHandler(this.frmEdit_Load);
+            this.Load += new System.EventHandler(this.frmEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numCost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPlannedHours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
