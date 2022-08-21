@@ -56,8 +56,9 @@ namespace Tasker
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(164, 38);
+            this.txtName.MaxLength = 30;
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(112, 20);
+            this.txtName.Size = new System.Drawing.Size(190, 20);
             this.txtName.TabIndex = 0;
             // 
             // label1
@@ -97,6 +98,7 @@ namespace Tasker
             // txtLink
             // 
             this.txtLink.Location = new System.Drawing.Point(164, 64);
+            this.txtLink.MaxLength = 1000;
             this.txtLink.Name = "txtLink";
             this.txtLink.Size = new System.Drawing.Size(586, 20);
             this.txtLink.TabIndex = 4;
@@ -169,6 +171,7 @@ namespace Tasker
             // 
             this.cbPriority.FormattingEnabled = true;
             this.cbPriority.Items.AddRange(new object[] {
+            "Not Set",
             "Low",
             "Medium",
             "High",
@@ -196,6 +199,7 @@ namespace Tasker
             this.button2.TabIndex = 14;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // numPlannedHours
             // 
@@ -245,6 +249,7 @@ namespace Tasker
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtName);
             this.Name = "frmEdit";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editing task";
             this.Load += new System.EventHandler(this.frmEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numCost)).EndInit();

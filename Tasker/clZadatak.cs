@@ -15,7 +15,9 @@ namespace Tasker
         public static SqlConnection dbCon = new SqlConnection();
         // public static string constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\tasks.mdf;Integrated Security=True";
 
-        public static string constr = @"Server=myServerAddress;Database=myDataBase;User Id = sa; Password=12!?qwQW;";
+       // public static string constr = @"Server=myServerAddress;Database=myDataBase;User Id = sa; Password=12!?qwQW;";
+
+        public static string constr = @"Server=WORKSTATION\SQL;Database=tasks;User Id = sa; Password=12!?qwQW;";
 
 
         public  void OpenConnection()
@@ -24,7 +26,7 @@ namespace Tasker
 
             try
             {
-                if (dbCon.State == ConnectionState.Open)
+                if (dbCon.State != ConnectionState.Open)
                 {
                     dbCon.Open();
                 }
@@ -78,17 +80,34 @@ namespace Tasker
             da.Fill(dt);
             return dt;
 
+           
         }
 
-        public long addTask (string cipher, string TaskName, string hyperlink, DateTime dtPlan, decimal cost, short prioritet, int plannedHours,string description, DateTime dtRok)
+        public string cipher (string table, string format) 
+        {
+            long ciphra = 1;
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandText= " SELECT MAX ( cipher ) + 1 FROM " + table + " WHERE isnull(deleted,0)=0 ";
+            cmd.Connection = dbCon;
+
+            ciphra =Convert.ToInt64(   cmd.ExecuteScalar() );
+
+            string result = ciphra.ToString("D4");
+
+            return result;
+
+        }
+
+        public long addTask (string cipher, string TaskName, string hyperlink, DateTime dtPlan, decimal cost, int prioritet, int plannedHours,string description, DateTime dtRok)
         {
             int n = 0;
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = dbCon;
 
-            cmd.CommandText = @"INSERT INTO Zadatak (cipher, name, link, description, priority, price, dateCreated, userU, plannedTime, DateDue ) 
+            cmd.CommandText = @"INSERT INTO Zadatak (cipher, name, link, description, priority, price, dateCreated, userU, plannedTime, datePlanned ) 
 
-                                             VALUES ( @cipher, @name, @link, @description, @priority,@price, @dateCreated, @User, @plannedTime, @DateDue )
+                                             VALUES ( @cipher, @name, @link, @description, @priority,@price, @dateCreated, @UserU, @plannedTime, @datePlanned )
 
             ";
 
@@ -99,9 +118,9 @@ namespace Tasker
             cmd.Parameters.AddWithValue("@priority", prioritet);
             cmd.Parameters.AddWithValue("@price", cost);
             cmd.Parameters.AddWithValue("@dateCreated", dtPlan);
-            cmd.Parameters.AddWithValue("@User", "");
+            cmd.Parameters.AddWithValue("@UserU", "");
             cmd.Parameters.AddWithValue("@plannedTime", plannedHours);
-            cmd.Parameters.AddWithValue("@DateDue", dtRok);
+            cmd.Parameters.AddWithValue("@datePlanned", dtRok);
 
 
             try
@@ -121,7 +140,7 @@ namespace Tasker
 
 
 
-        public long addTask(long ID, string cipher, string TaskName, string hyperlink, DateTime dtPlan, decimal cost, short prioritet, int plannedHours, string description, DateTime dtRok)
+        public long UpdateTask(long ID, string cipher, string TaskName, string hyperlink, DateTime dtPlan, decimal cost, int prioritet, int plannedHours, string description, DateTime dtRok)
         {
             int n = 0;
             SqlCommand cmd = new SqlCommand();
@@ -136,7 +155,7 @@ namespace Tasker
                                     dateCreated = @dateCreated,
                                     userU = @userU,
                                     plannedTime = @plannedTime,
-                                    DateDue = @DateDue
+                                    datePlanned = @datePlanned
 
                                     WHERE id = @ID
 
@@ -149,9 +168,9 @@ namespace Tasker
             cmd.Parameters.AddWithValue("@priority", prioritet);
             cmd.Parameters.AddWithValue("@price", cost);
             cmd.Parameters.AddWithValue("@dateCreated", dtPlan);
-            cmd.Parameters.AddWithValue("@User", "");
+            cmd.Parameters.AddWithValue("@UserU", "");
             cmd.Parameters.AddWithValue("@plannedTime", plannedHours);
-            cmd.Parameters.AddWithValue("@DateDue", dtRok);
+            cmd.Parameters.AddWithValue("@datePlanned", dtRok);
             cmd.Parameters.AddWithValue("@ID", ID);
 
 

@@ -32,6 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGlavna));
             this.bsData = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.mnuEdit = new System.Windows.Forms.ToolStripButton();
+            this.mnuDel = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuAdd = new System.Windows.Forms.ToolStripButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cipher = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,16 +52,7 @@
             this.Spend = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Done = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.WorkingH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.mnuEdit = new System.Windows.Forms.ToolStripButton();
-            this.mnuDel = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.mnuAdd = new System.Windows.Forms.ToolStripButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.bsData)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -83,7 +84,8 @@
             this.Cost,
             this.Spend,
             this.Done,
-            this.WorkingH});
+            this.WorkingH,
+            this.Description});
             this.dataGridView1.DataSource = this.bsData;
             this.dataGridView1.Location = new System.Drawing.Point(0, 77);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
@@ -92,70 +94,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(986, 254);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.Visible = false;
-            // 
-            // Cipher
-            // 
-            this.Cipher.DataPropertyName = "Sifra";
-            this.Cipher.FillWeight = 80F;
-            this.Cipher.HeaderText = "Cipher";
-            this.Cipher.Name = "Cipher";
-            // 
-            // Name1
-            // 
-            this.Name1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Name1.DataPropertyName = "Name";
-            this.Name1.FillWeight = 200F;
-            this.Name1.HeaderText = "TaskName";
-            this.Name1.Name = "Name1";
-            // 
-            // Status
-            // 
-            this.Status.DataPropertyName = "status";
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            // 
-            // Priority
-            // 
-            this.Priority.DataPropertyName = "prioritet";
-            this.Priority.HeaderText = "Priority";
-            this.Priority.Name = "Priority";
-            // 
-            // DatumP
-            // 
-            this.DatumP.DataPropertyName = "datumK";
-            this.DatumP.HeaderText = "Created";
-            this.DatumP.Name = "DatumP";
-            // 
-            // Cost
-            // 
-            this.Cost.DataPropertyName = "cijena";
-            this.Cost.HeaderText = "Cost";
-            this.Cost.Name = "Cost";
-            // 
-            // Spend
-            // 
-            this.Spend.DataPropertyName = "utrosenoKM";
-            this.Spend.HeaderText = "Spend";
-            this.Spend.Name = "Spend";
-            // 
-            // Done
-            // 
-            this.Done.DataPropertyName = "DatumZ";
-            this.Done.HeaderText = "Done";
-            this.Done.Name = "Done";
-            // 
-            // WorkingH
-            // 
-            this.WorkingH.DataPropertyName = "SatiRada";
-            this.WorkingH.HeaderText = "Working h";
-            this.WorkingH.Name = "WorkingH";
             // 
             // toolStrip1
             // 
@@ -214,20 +152,20 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(0, 28);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(986, 44);
             this.panel1.TabIndex = 3;
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Location = new System.Drawing.Point(88, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(255, 20);
-            this.textBox1.TabIndex = 5;
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.txtSearch.Location = new System.Drawing.Point(88, 13);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(255, 20);
+            this.txtSearch.TabIndex = 5;
+            this.txtSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // label1
             // 
@@ -238,13 +176,91 @@
             this.label1.Text = "Search";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // richTextBox1
+            // txtDescription
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(0, 336);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(986, 131);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
+            this.txtDescription.Location = new System.Drawing.Point(0, 336);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(986, 131);
+            this.txtDescription.TabIndex = 4;
+            this.txtDescription.Text = "";
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.Visible = false;
+            // 
+            // Cipher
+            // 
+            this.Cipher.DataPropertyName = "cipher";
+            this.Cipher.FillWeight = 60F;
+            this.Cipher.HeaderText = "Cipher";
+            this.Cipher.Name = "Cipher";
+            this.Cipher.Width = 60;
+            // 
+            // Name1
+            // 
+            this.Name1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Name1.DataPropertyName = "Name";
+            this.Name1.FillWeight = 200F;
+            this.Name1.HeaderText = "TaskName";
+            this.Name1.Name = "Name1";
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "status";
+            this.Status.FillWeight = 80F;
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.Width = 80;
+            // 
+            // Priority
+            // 
+            this.Priority.DataPropertyName = "priority";
+            this.Priority.HeaderText = "Priority";
+            this.Priority.Name = "Priority";
+            // 
+            // DatumP
+            // 
+            this.DatumP.DataPropertyName = "dateCreated";
+            this.DatumP.HeaderText = "Created";
+            this.DatumP.Name = "DatumP";
+            // 
+            // Cost
+            // 
+            this.Cost.DataPropertyName = "price";
+            this.Cost.FillWeight = 60F;
+            this.Cost.HeaderText = "Cost";
+            this.Cost.Name = "Cost";
+            this.Cost.Width = 60;
+            // 
+            // Spend
+            // 
+            this.Spend.DataPropertyName = "utrosenoKM";
+            this.Spend.FillWeight = 60F;
+            this.Spend.HeaderText = "Spend";
+            this.Spend.Name = "Spend";
+            this.Spend.Width = 60;
+            // 
+            // Done
+            // 
+            this.Done.DataPropertyName = "dateFinished";
+            this.Done.HeaderText = "Done";
+            this.Done.Name = "Done";
+            // 
+            // WorkingH
+            // 
+            this.WorkingH.DataPropertyName = "SatiRada";
+            this.WorkingH.HeaderText = "Working h";
+            this.WorkingH.Name = "WorkingH";
+            // 
+            // Description
+            // 
+            this.Description.DataPropertyName = "description";
+            this.Description.HeaderText = "Description";
+            this.Description.Name = "Description";
+            this.Description.Visible = false;
             // 
             // frmGlavna
             // 
@@ -252,7 +268,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(986, 479);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dataGridView1);
@@ -282,8 +298,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton mnuAdd;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox txtDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cipher;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name1;
@@ -294,7 +311,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Spend;
         private System.Windows.Forms.DataGridViewTextBoxColumn Done;
         private System.Windows.Forms.DataGridViewTextBoxColumn WorkingH;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
     }
 }
 
