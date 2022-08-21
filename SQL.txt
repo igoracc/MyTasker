@@ -1,3 +1,4 @@
+
 CREATE TABLE [dbo].[Zadatak](
 	[id] [bigint] IDENTITY(1,1) NOT NULL,
 	[cipher] [nvarchar](8) NULL DEFAULT (''),
@@ -13,7 +14,6 @@ CREATE TABLE [dbo].[Zadatak](
 	[userU] [nvarchar](18) NULL,
 	[plannedTime] [decimal](18, 2) NULL,
 	[DateDue] [date] NULL DEFAULT (NULL),
-	[deleted] [smallint] NULL DEFAULT ((0))
+	[deleted] [smallint] NULL DEFAULT ((0)),
+	[status] [smallint] NULL
 ) ON [PRIMARY]
-
-GO
