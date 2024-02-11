@@ -189,6 +189,40 @@ namespace Tasker
 
         }
 
+        public long FinishTask(long ID,  string description)
+        {
+            int n = 0;
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = dbCon;
+
+            cmd.CommandText = @"UPDATE Zadatak SET
+                                   
+                                    description = @description,
+                                    status = 4
+
+                                    WHERE id = @ID
+
+            ";
+
+            cmd.Parameters.AddWithValue("@description", description);
+            cmd.Parameters.AddWithValue("@ID", ID);
+
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                n = 1;
+            }
+            catch (Exception)
+            {
+                n = 0;
+                throw;
+            }
+
+            return n;
+
+        }
+
 
 
 

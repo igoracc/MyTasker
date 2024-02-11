@@ -35,3 +35,16 @@ C:\Users\igor\Documents\GitHub\MyTasker-master\Tasker\bin\Debug\tasks_log.ldf
 C:\Users\igor\Documents\GitHub\MyTasker-master\Tasker\bin\Debug\Tasker.exe.config
 C:\Users\igor\Documents\GitHub\MyTasker-master\Tasker\bin\Debug\Tasker.exe
 C:\Users\igor\Documents\GitHub\MyTasker-master\Tasker\bin\Debug\Tasker.pdb
+C:\Users\igor\Documents\GitHub\MyTasker\Tasker\bin\Debug\tasks.mdf
+C:\Users\igor\Documents\GitHub\MyTasker\Tasker\bin\Debug\tasks_log.ldf
+C:\Users\igor\Documents\GitHub\MyTasker\Tasker\bin\Debug\Tasker.exe.config
+C:\Users\igor\Documents\GitHub\MyTasker\Tasker\bin\Debug\Tasker.exe
+C:\Users\igor\Documents\GitHub\MyTasker\Tasker\bin\Debug\Tasker.pdb
+C:\Users\igor\Documents\GitHub\MyTasker\Tasker\obj\Debug\Tasker.csproj.AssemblyReference.cache
+C:\Users\igor\Documents\GitHub\MyTasker\Tasker\obj\Debug\Tasker.frmEdit.resources
+C:\Users\igor\Documents\GitHub\MyTasker\Tasker\obj\Debug\Tasker.frmGlavna.resources
+C:\Users\igor\Documents\GitHub\MyTasker\Tasker\obj\Debug\Tasker.Properties.Resources.resources
+C:\Users\igor\Documents\GitHub\MyTasker\Tasker\obj\Debug\Tasker.csproj.GenerateResource.cache
+C:\Users\igor\Documents\GitHub\MyTasker\Tasker\obj\Debug\Tasker.csproj.CoreCompileInputs.cache
+C:\Users\igor\Documents\GitHub\MyTasker\Tasker\obj\Debug\Tasker.exe
+C:\Users\igor\Documents\GitHub\MyTasker\Tasker\obj\Debug\Tasker.pdb

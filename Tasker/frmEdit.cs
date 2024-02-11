@@ -37,6 +37,10 @@ namespace Tasker
             {
                 zadatak.UpdateTask(TaskID, txtCipher.Text, txtName.Text, txtLink.Text, dtP.Value, numCost.Value, cbPriority.SelectedIndex, Convert.ToInt16(numPlannedHours.Value), txtDescription.Text, dtP.Value);
             }
+            else if (modus == 3)
+            {
+                zadatak.FinishTask(TaskID, txtDescription.Text);
+            }
 
 
 
@@ -54,6 +58,20 @@ namespace Tasker
             {
                 gatherData(TaskID);
             }
+
+            if (modus == 3)
+            {
+                this.Text = "Closing task";
+
+                txtCipher.Enabled = false;
+                txtName.Enabled = false;
+                txtLink.Enabled = false;
+                dtP.Enabled = false;
+                cbPriority.Enabled = false;
+                numPlannedHours.Enabled = false;
+
+            }
+
 
 
 

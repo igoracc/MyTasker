@@ -107,7 +107,8 @@ namespace Tasker
         private void bsData_PositionChanged(object sender, EventArgs e)
         {
 
-            if (dataGridView1.Rows.Count>0)
+            if (bsData.Position >= 0 && bsData.Position < dataGridView1.Rows.Count)
+
             {
                 TaskID = Convert.ToInt64(dataGridView1.CurrentRow.Cells[0].Value.ToString());
                 txtDescription.Text = Convert.ToString(dataGridView1.CurrentRow.Cells[10].Value.ToString());
@@ -126,5 +127,20 @@ namespace Tasker
 
         }
 
+        private void mnuAdd_Click(object sender, EventArgs e)
+        {
+            frmEdit form = new frmEdit();
+            form.TaskID = TaskID;
+            form.modus = 3;
+            form.ShowDialog();
+
+            gatherData("");
+
+        }
+
+        private void bsData_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
